@@ -4,7 +4,7 @@ from .models import Post
 
 def all_blogs(request):
     blog_count = Post.objects.count
-    posts = Post.objects.order_by('-created_date')[:2]
+    posts = Post.objects.order_by('-created_date')
     return render(request, 'blog/all_blogs.html', {'posts': posts, 'blog_count': blog_count})
 
 
